@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def blogs
   end
+
+  def planets
+  end
 end

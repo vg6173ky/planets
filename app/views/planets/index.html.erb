@@ -1,0 +1,40 @@
+<center>
+<p style="color: green"><%= notice %></p>
+
+<h1>Planets</h1>
+<br/>
+<table class="table table-striped table-bordered table-hover">
+  <thead class= "thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Planet Type</th>
+      <th>Host Star</th>
+      <th>Planetary System</th>
+      <th>Galaxy</th>
+    </tr>
+  </thead>
+  <tbody >
+    <% @planets.each do |planet| %>
+    <% if planet.name == planet.name%>
+    <tr>
+      <td>
+      <%= link_to planet.name + ' ', planet %>
+
+      </td>
+
+      <td><%= planet.planet_type %></td>
+      <td><%= planet.host_star %></td>
+      <td><%= planet.planetary_system %></td>
+      <td><%= planet.galaxy %></td>
+
+
+      <td><%= link_to 'Delete', planet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"%></td>
+
+    </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to "New planet", new_planet_path, class: "btn btn-secondary" %>
+</center>

@@ -1,0 +1,20 @@
+<center>
+<div id="<%= dom_id planet %>">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= planet.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= planet.planet_type %></h6>
+    <p class="card-text">
+      <%= planet.host_star %> |
+      <%= planet.planetary_system %> |
+      <%= planet.galaxy %>  
+    </p>
+    <div>
+      <%= link_to "Edit", edit_planet_path(@planet), class: "btn btn-secondary" %> 
+      <%= link_to "Back", planets_path, class: "btn btn-secondary btn-dark" %>
+    </div><br/>
+  </div>
+</div><br/>
+      <%= button_to "Delete", @planet, method: :delete,  class: "btn btn-secondary btn-danger" %>
+
+</center>
